@@ -1,62 +1,59 @@
-import {Card, Button } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './menu.css';
+import pizzas from "../../data/pizzas.json";
+import { useState } from "react";
+import Dropdown from 'react-bootstrap/Dropdown';
+import BasicExample from "../dropdown/BasicDropdown";
+import BasicDropdown from "../dropdown/BasicDropdown";
 
 export default function Menu() {
-    const pizzaData = [
-      {
-        "name": "Cheese",
-        "price": "$23.50",
-        "image": "/images/cheese.png",
-        "outOfStock": false
-      },
-      {
-        "name": "Mushroom",
-        "price": "$25.50",
-        "image": "/images/mushrooms.png",
-        "outOfStock": true
-      },
-      {
-        "name": "Aubergine",
-        "price": "$24.50",
-        "image": "/images/eggplant.png",
-        "outOfStock": false
-      },
-      {
-        "name": "Pepperoni",
-        "price": "$26.50",
-        "image": "/images/pepperonies.png",
-        "outOfStock": false
-      },
-      {
-        "name": "Olive",
-        "price": "$24.50",
-        "image": "/images/olives.png",
-        "outOfStock": true
-      },
-      {
-        "name": "Tomato",
-        "price": "$23.50",
-        "image": "/images/tomatoes.png",
-        "outOfStock": false
-      }
+    const [pizzaData, setPizzaData] = useState(pizzas);
+
+    const VeganFilter = () => {
+        const veganPizzas = pizzas.filter(pizza => pizza.vegan); // Assuming `vegan` is a boolean property in your pizza data
+        setPizzaData(veganPizzas);
+    }
+    const GlutenFreeFilter = () => {
+        const glutenFreePizzas = pizzas.filter(pizza => pizza.glutenFree); // Assuming `vegan` is a boolean property in your pizza data
+        setPizzaData(glutenFreePizzas);
+    }
+
+    const ResetFilter = () => {
+        setPizzaData(pizzas)
+    }
+
+    const PizzaGrid = () => {
+        return pizzaData.map((pizza, index) => (
+            <Card className="pizza-grid-item" style={{ width: '12rem' }} key={index}>
+                <Card.Img variant="top" src={pizza.image} alt={`${pizza.name} Pizza`} style={{ width: "10rem" }} />
+                <Card.Body>
+                    <Card.Title>{pizza.name}</Card.Title>
+                    <Card.Text>
+                        {pizza.price}
+                    </Card.Text>
+                    <Button variant="primary" disabled={pizza.outOfStock}>
+                        {pizza.outOfStock ? 'Out of Stock' : 'Add to Order'}
+                    </Button>
+                </Card.Body>
+            </Card>
+        ));
+    }
+
+    const dropdownOptions = [
+        { label: 'Vegan', action: VeganFilter },
+        { label: 'Gluten Free', action: GlutenFreeFilter },
+        { label: 'Reset', action: ResetFilter },
     ];
-  
+
     return (
-      <div className="pizza-grid">
-        {pizzaData.map((pizza, index) => (
-            <div key={index}>
-            <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={pizza.image} alt={`${pizza.name} Pizza`} />
-            <Card.Body>
-              <Card.Title>{pizza.name}</Card.Title>
-              <Card.Text>
-              {pizza.price}
-              </Card.Text>
-              <Button variant="primary" disabled={pizza.outOfStock}>{pizza.outOfStock ? 'Out of Stock' : 'Add to Order'}</Button>
-            </Card.Body>
-          </Card>
-          </div>
-        ))}
-      </div>
+        <div className="text-center">
+            <h1 >Our Menu</h1>
+            <BasicDropdown title="Filter" options={dropdownOptions} />
+            <div className="pizza-grid">
+                <PizzaGrid />
+            </div>
+        </div>
     );
-  }
+}
