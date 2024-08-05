@@ -1,0 +1,18 @@
+footer {
+    background-color: #e29734;
+    color: white;
+    text-align: center;
+    font-size: smaller;
+    padding: 5px;
+    padding-top: 20px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 5px;
+}

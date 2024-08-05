@@ -1,0 +1,33 @@
+.pizza-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .pizza-card {
+    margin: 10px;
+  }
+  
+  .card-image {
+    width: 100%; /* Adjust this if needed */
+    max-width: 10rem; /* This controls the maximum size of the image */
+    display: inline;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .pizza-grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20rem;
+    margin: 2rem;
+    line-height: 5%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #613f00;
+}
+
+.pizza-grid-item:hover {
+    background-color: #f7dcb4;
+}
