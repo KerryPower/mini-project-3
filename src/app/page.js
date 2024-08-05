@@ -1,5 +1,8 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from "next/image";
 import styles from "./page.module.css";
+import  Button  from "react-bootstrap/Button";
+
 
 export default function Home() {
   return (
@@ -10,6 +13,8 @@ export default function Home() {
           <code className={styles.code}>src/app/page.js</code>
         </p>
         <div>
+        <Button variant="danger">Danger</Button>{' '}
+        <Button variant="outline-danger">Danger</Button>{' '}
           <a
             href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
