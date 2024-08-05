@@ -1,21 +1,20 @@
 'use client'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { NavbarBrand, NavbarToggle, NavbarCollapse} from 'react-bootstrap';
-import NavLink from 'react-bootstrap';
 
-const NavBar = () => {
+function NavBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <NavbarBrand href="#home">React-Bootstrap</NavbarBrand>
-        <NavbarToggle aria-controls="basic-navbar-nav" />
-        <NavbarCollapse id="basic-navbar-nav">
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavLink href="#home">Home</NavLink>
-            <NavLink href="#link">Link</NavLink>
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -28,10 +27,10 @@ const NavBar = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-        </NavbarCollapse>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
   );
 }
 
-export default NavBar
+export default NavBar;
