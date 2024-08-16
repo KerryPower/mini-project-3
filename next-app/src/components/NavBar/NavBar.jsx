@@ -9,6 +9,7 @@ import NavbarCollapse from 'react-bootstrap/NavbarCollapse';
 import NavbarToggle from 'react-bootstrap/NavbarToggle';
 import NavLink from 'react-bootstrap/NavLink';
 import './navbar.css';
+import { useState } from 'react';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -20,14 +21,21 @@ const navLinks = [
 const dropdownItems = [
   { href: '/api/auth/signin', label: 'Login' },
   { href: '/admin/orders', label: 'Orders' },
+  { href: '/admin/info', label: 'Employee Info' }
   ];
 
 const NavBar = () => {
+  const [navImgSrc, setNavImgSrc] = useState('images/logo.png');
+        const navFallbackSrc = '../images/logo.png';
+      
+        const handleNavImgError = () => {
+          setNavImgSrc(navFallbackSrc);
+        };
   return (
     <Navbar expand="lg" className="navbar-custom" sticky='top'>
       <Container>
         <NavbarBrand>
-          <img src="images/logo.png" alt="Simply Sliced" height={30} /></NavbarBrand>
+          <img src={navImgSrc} alt="Simply Sliced" height={30}  onError={handleNavImgError} /></NavbarBrand>
         <NavbarToggle aria-controls="basic-navbar-nav" />
         <NavbarCollapse id="basic-navbar-nav">
           <Nav className="mx-auto">

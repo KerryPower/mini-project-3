@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mini Project 3
 
-## Getting Started
+**A small local Next.JS API routed web server for a pizza ordering website.** 
 
-First, run the development server:
+## Installation 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**From a new terminal inside your target directory:**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clone the repository:  
+`git clone https://github.com/KerryPower/MiniProject3.git`
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+2. Navigate into the project directory:     
+`cd mini-project-2/next-app`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Install dependencies:
+`npm install`
+    
 
-## Learn More
+## Running the server
 
-To learn more about Next.js, take a look at the following resources:
+To start the server:
+`npm run dev`
+            
+The server will now run on http://localhost:3000.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Frontend usage 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Simply Sliced has grown and now has the following available to view by the user:
 
-## Deploy on Vercel
+- Our Home/Menu Page : [http://localhost:3000](http://localhost:3000) - Menu items can now be filtered for different allergens. 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Your Order Page (still under development) : [http://localhost:3000/order](http://localhost:3000/order)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- A page all about us : [http://localhost:3000/about](http://localhost:3000/about)
+
+- How you can find/contact us : [http://localhost:3000/contact](http://localhost:3000/contact)
+
+We also now have an admin section for authenticated users to view the following:
+
+- The List of Order : [http://localhost:3000/admin/orders](http://localhost:3000/admin/orders) - 
+The orders list can be changed by status using the buttons on top of the page. 
+
+- Employee Info (still under development) : [http://localhost:3000/admin/info](http://localhost:3000/admin/info) 
+
+These can also be navigated by use of the NavBar. 
+
+## Authentication
+
+For authentication we currently have two methods for your use:
+
+- GITHUB authentication - Requires you to login to GITHUB with your credentials (these will need to match what is in the env.local file on your local machine)
+
+- Credentials authenitcation - Requires a username in the format of your lowercase "first.last" names and for the password . . . "password" 
+
+## Backend Usage
+
+API calls can now be made to http://localhost:3000/api/orders
+
+- **GET** calls can be filtered by status.  
+- **POST** calls are by id with new JSON data in the request body.   
+- **PUT** calls update orders by id with updated JSON data in the request body.  
+- **DELETE** calls delete orders by id.
