@@ -7,7 +7,7 @@
 **From a new terminal inside your target directory:**
 
 1. Clone the repository:  
-`git clone https://github.com/KerryPower/MiniProject3.git`
+`git clone https://github.com/KerryPower/mini-project-3.git`
 
 2. Navigate into the project directory:     
 `cd mini-project-2/next-app`
