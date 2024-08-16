@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Cheese",
+        "price": "$23.50",
+        "image": "/images/cheese.png",
+        "outOfStock": false,
+        "vegan": false,
+        "glutenFree" : false
+    },
+    {
+        "name": "Mushroom",
+        "price": "$25.50",
+        "image": "/images/mushrooms.png",
+        "outOfStock": true,
+        "vegan": true,
+        "glutenFree" : false
+    },
+    {
+        "name": "Aubergine",
+        "price": "$24.50",
+        "image": "/images/eggplant.png",
+        "outOfStock": false,
+        "vegan": true,
+        "glutenFree" : true
+    },
+    {
+        "name": "Pepperoni",
+        "price": "$26.50",
+        "image": "/images/pepperonies.png",
+        "outOfStock": false,
+        "vegan": false,
+        "glutenFree" : true
+    },
+    {
+        "name": "Olive",
+        "price": "$24.50",
+        "image": "/images/olives.png",
+        "outOfStock": true,
+        "vegan": true,
+        "glutenFree" : false
+    },
+    {
+        "name": "Tomato",
+        "price": "$23.50",
+        "image": "/images/tomatoes.png",
+        "outOfStock": false,
+        "vegan": false,
+        "glutenFree" : false
+    }
+]
