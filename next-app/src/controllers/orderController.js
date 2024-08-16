@@ -4,7 +4,7 @@ import orders from "../data/Orders.json";
 export async function getOrders(status) {
     try {
         if (status) {
-            return orders.filter(item => item.status === status);
+            return orders.filter(item => item.status == status);
         }
         return orders;
     } catch (error) {
@@ -23,7 +23,7 @@ export async function addOrder(newData) {
 
 export async function updateOrder(id, newData) {
     try {
-        const itemIndex = orders.findIndex(item => item.id === id);
+        const itemIndex = orders.findIndex(item => item.id == id);
 
         if (itemIndex === -1) {
             throw new Error('Item not found');
@@ -38,7 +38,7 @@ export async function updateOrder(id, newData) {
 
 export async function deleteOrder(id) {
     try {
-        const orderIndex = orders.findIndex(order => order.id === id);
+        const orderIndex = orders.findIndex(order => order.id == id);
 
         if (orderIndex === -1) {
             throw new Error('Order not found');
