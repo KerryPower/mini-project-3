@@ -1,0 +1,44 @@
+.pizza-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pizza-card {
+  margin: 10px;
+}
+
+.card-image {
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pizza-grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20rem;
+  margin: 2rem;
+  line-height: 5%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #613f00;
+  background-color: #f7dcb4;
+}
+
+.pizza-grid-item:hover {
+  background-color: antiquewhite;
+}
+
+.order-button {
+  background-color: #e29734;
+}
+
+.order-button:disabled {
+  background-color: #e29734;
+  pointer-events: auto;
+  cursor: not-allowed;
+
+}
