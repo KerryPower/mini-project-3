@@ -26,18 +26,12 @@ const dropdownItems = [
   ];
 
 const NavBar = () => {
-  const [navImgSrc, setNavImgSrc] = useState('images/logo.png');
-        const navFallbackSrc = '../images/logo.png';
-      
-        const handleNavImgError = () => {
-          setNavImgSrc(navFallbackSrc);
-        };
+ 
   return (
     <Navbar expand="lg" className="navbar-custom" sticky='top'>
       <Container>
         <NavbarBrand>
-          <Image ></Image>
-          <img src={navImgSrc} alt="Simply Sliced" height={30}  onError={handleNavImgError} /></NavbarBrand>
+          <img src="http://localhost:3000/images/logo.png" alt="Simply Sliced" height={30} /></NavbarBrand>
         <NavbarToggle aria-controls="basic-navbar-nav" />
         <NavbarCollapse id="basic-navbar-nav">
           <Nav className="mx-auto">
