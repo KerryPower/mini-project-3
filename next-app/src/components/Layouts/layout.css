@@ -1,0 +1,20 @@
+main {
+    background-image: url("../../../public/images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    padding: 2rem;
+}
+
+.displayDiv {
+    padding: 2rem;
+    height: 100%;
+    width: 60vw;
+    margin: 0 auto;
+    background-color: #efbf5d;
+    font-family: Arial, sans-serif;
+    border: 1px solid #efbf5d;
+    border-radius: 5%;
+}
+
