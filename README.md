@@ -1,6 +1,6 @@
 # Mini Project 3
 
-**A small local Next.JS API routed web server for a pizza ordering website.** 
+**A small local Next.JS APP routed web server for a pizza ordering website.** 
 
 ## Installation 
 
