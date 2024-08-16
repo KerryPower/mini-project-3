@@ -10,6 +10,7 @@ import NavbarToggle from 'react-bootstrap/NavbarToggle';
 import NavLink from 'react-bootstrap/NavLink';
 import './navbar.css';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -35,6 +36,7 @@ const NavBar = () => {
     <Navbar expand="lg" className="navbar-custom" sticky='top'>
       <Container>
         <NavbarBrand>
+          <Image ></Image>
           <img src={navImgSrc} alt="Simply Sliced" height={30}  onError={handleNavImgError} /></NavbarBrand>
         <NavbarToggle aria-controls="basic-navbar-nav" />
         <NavbarCollapse id="basic-navbar-nav">
