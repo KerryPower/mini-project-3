@@ -18,7 +18,7 @@ export const options = {
                 },
                 password: {
                     label: "Password",
-                    type: "text"
+                    type: "password"
                 }
             },
             async authorize(credentials) {
