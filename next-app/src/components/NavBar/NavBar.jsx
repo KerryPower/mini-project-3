@@ -31,7 +31,8 @@ const NavBar = () => {
     <Navbar expand="lg" className="navbar-custom" sticky='top'>
       <Container>
         <NavbarBrand>
-          <img src="http://localhost:3000/images/logo.png" alt="Simply Sliced" height={30} /></NavbarBrand>
+          <Image src="/images/logo.png" alt="Simply Sliced" height={30} width={150}/>
+          </NavbarBrand>
         <NavbarToggle aria-controls="basic-navbar-nav" />
         <NavbarCollapse id="basic-navbar-nav">
           <Nav className="mx-auto">
